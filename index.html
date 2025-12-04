@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BreezeGarden — Merge Garden Prototype</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="atmosphere">
+      <div class="gradient-sky"></div>
+      <div class="cloud cloud-a"></div>
+      <div class="cloud cloud-b"></div>
+      <div class="cloud cloud-c"></div>
+      <div class="particles"></div>
+    </div>
+
+    <main class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Premium calming merge</p>
+          <h1>BreezeGarden</h1>
+          <p class="subtitle">
+            Layered micro-satisfactions, painterly botanicals, and infinite cozy
+            mastery tuned for “one more merge”.
+          </p>
+        </div>
+        <div class="cta-stack">
+          <button id="restart-btn" class="btn primary">Soft Restart</button>
+          <button id="night-toggle" class="btn ghost">Firefly Night</button>
+        </div>
+      </header>
+
+      <section class="hud">
+        <div class="stat">
+          <span class="label">Score</span>
+          <span class="value" id="score-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Best</span>
+          <span class="value" id="best-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Longest Chain</span>
+          <span class="value" id="chain-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Moves</span>
+          <span class="value" id="moves-value">0</span>
+        </div>
+      </section>
+
+      <section class="serenity">
+        <div class="serenity-heading">
+          <span>Serenity Meter</span>
+          <span id="serenity-label">0%</span>
+        </div>
+        <div class="meter-track">
+          <div class="meter-fill" id="serenity-fill"></div>
+        </div>
+      </section>
+
+      <section class="main-grid">
+        <div class="board-card">
+          <div class="board-shadow"></div>
+          <div class="board" id="board"></div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="queue-card">
+            <div class="panel-header">
+              <h2>Next Blossoms</h2>
+              <p>Tap a tile, then place it on the floating tray.</p>
+            </div>
+            <div class="queue" id="queue"></div>
+          </div>
+
+          <div class="hold-card">
+            <div class="panel-header">
+              <h2>Hold Capsule</h2>
+              <p>Stash a tile once per turn to set up cascades.</p>
+            </div>
+            <div class="hold-row">
+              <button id="hold-btn" class="btn secondary">Hold / Swap</button>
+              <div id="hold-slot" class="hold-slot empty">Empty</div>
+            </div>
+          </div>
+
+          <div class="actions-card">
+            <button id="undo-btn" class="btn ghost full">Undo Pulse</button>
+            <div class="tip">
+              <p>
+                Merges happen when a placement completes three identical plants
+                orthogonally. Keep chaining to feed the Spirit Tree.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <section class="overlay hidden" id="game-over">
+      <div class="overlay-card">
+        <p class="eyebrow">Garden at capacity</p>
+        <h2>Soft Restart?</h2>
+        <p class="subtitle">
+          Your floating tray bloomed to the brim. Bank your score and breathe
+          into a fresh run.
+        </p>
+        <div class="overlay-actions">
+          <button class="btn ghost" id="close-overlay">Keep Gazing</button>
+          <button class="btn primary" id="overlay-restart">Restart Run</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

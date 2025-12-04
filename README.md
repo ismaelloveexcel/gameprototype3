@@ -63,3 +63,26 @@ Premium, calming, relentlessly re-playable. BreezeGarden takes the serene 5×5 f
 
 ## Recommended Launch Site for Best Graphics
 Launch a downloadable PC/Mac build on **Steam**. Steam lets you ship HDR-capable, 4K-ready builds without browser compression limits, supports high-end post-processing (bloom, SSAO, volumetrics), and instantly taps into the cozy/premium indie audience already primed for lush visuals. Pair the Steam release with an optional WebGL teaser elsewhere if desired, but host the definitive version on Steam for uncompromised graphics fidelity.
+
+## Playable Prototype (This Repo)
+To give the blueprint something tangible, this repository now ships a lightweight HTML/CSS/JS prototype that runs anywhere a modern browser is available (Replit, GitHub Pages, Netlify, etc.). Highlights:
+
+- 5×5 floating tray with soft-engraved slots and deluxe UI shell described above.
+- Queue of three tiles with rarity bias, Drift Seed variants, hold capsule, undo pulse, and move counter.
+- Merge logic that resolves orthogonal clusters of three or more, supports cascading upgrades, awards serenity, and performs Zen Burst boosts once the meter loops.
+- Wind Tile buff that appears every ~10–15 moves, plus Firefly Night palette toggle and animated background clouds/particles.
+- Minimal state persistence (best score stored in `localStorage`) and helper hotkeys (`R` restart, `U` undo).
+
+### Run on Replit
+1. Create a new **HTML/CSS/JS Replit** or import this repo directly via Git.
+2. Ensure the three files stay at the project root: `index.html`, `style.css`, and `script.js` (no build tooling required).
+3. Hit the green **Run** button. Replit’s static web server will launch automatically and expose the URL where the garden prototype is playable.
+4. Optional: toggle the console to view logged state snapshots while debugging (`console.log` statements are already sprinkled through the JS if you need deeper insight).
+
+### Run Locally
+```bash
+npx serve
+# or
+python3 -m http.server 4173
+```
+Then open the printed localhost URL in your browser.
